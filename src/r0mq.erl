@@ -9,12 +9,8 @@
 %% -- Callbacks --
 
 start(normal, []) ->
-    %% TODO: Validate the configuration and pass it along.
-    Specs = case application:get_env(services) of
-                {ok, Services} -> Services;
-                undefined      -> []
-            end,
-    r0mq_sup:start_link(Specs).
+    {ok, Services} = application:get_env(services),
+    r0mq_sup:start_link(Services).
 
 stop(_State) ->
     ok.

@@ -1,0 +1,8 @@
+{application, r0mq,
+ [{description, "RabbitMQ -- ZeroMQ bridge"},
+  {vsn,"%%VSN%%"},
+  {modules, []},
+  {registered, []},
+  {env, [{services, []}]},
+  {mod, {r0mq, []}},
+  {applications, [kernel, stdlib, rabbit]}]}.
